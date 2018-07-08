@@ -20,6 +20,7 @@ const { MasterAnimeAPI: api, Filter } = require('../dist/index');
             const data = await supplier();
             success = typeof data !== 'undefined';
         } catch (e) {
+            console.error(e);
         }
 
         if (success)
