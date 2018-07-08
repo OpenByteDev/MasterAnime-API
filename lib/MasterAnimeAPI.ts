@@ -1,5 +1,6 @@
-import { UriHelper, Filter, Type, Uri, Id } from './UriHelper';
 import axios from 'axios';
+import { Filter, Type } from './Filter';
+import { Id, Uri, UriHelper } from './UriHelper';
 
 export interface Anime {
     id: number;
@@ -87,7 +88,7 @@ export interface Release {
         age: string;
         poster: string;
         wallpaper: string | null;
-    }
+    };
     episode: string;
     created_at: string;
 }
@@ -123,26 +124,26 @@ export interface PosterInfo {
 
 export class MasterAnimeAPI {
 
-    public static async getAnime (id: Id): Promise<Anime> {
+    public static async getAnime(id: Id): Promise<Anime> {
         return (await axios.get(UriHelper.getAnime(id, false))).data;
     }
-    public static async getAnimeDetailed (id: Id): Promise<AnimeDetailed> {
+    public static async getAnimeDetailed(id: Id): Promise<AnimeDetailed> {
         return (await axios.get(UriHelper.getAnime(id, true))).data;
     }
-    public static async getEpisode (anime_id: Id, episode: number): Promise<Episode> {
+    public static async getEpisode(anime_id: Id, episode: number): Promise<Episode> {
         return (await MasterAnimeAPI.getAnimeDetailed(anime_id)).episodes[episode];
     }
-    public static async getEpisodeUrl (anime_id: Id, episode: number): Promise<Uri> {
+    public static async getEpisodeUrl(anime_id: Id, episode: number): Promise<Uri> {
         const slug = (await MasterAnimeAPI.getAnime(anime_id)).slug;
         return UriHelper.getEpisode(slug, episode);
     }
-    public static async getTrending (): Promise<Trending> {
+    public static async getTrending(): Promise<Trending> {
         return (await axios.get(UriHelper.getTrending())).data;
     }
-    public static async getReleases (): Promise<Release[]> {
+    public static async getReleases(): Promise<Release[]> {
         return (await axios.get(UriHelper.getReleases())).data;
     }
-    public static async getFiltering (filter: Filter): Promise<FilterListing> {
+    public static async getFiltering(filter: Filter): Promise<FilterListing> {
         return (await axios.get(UriHelper.getFilter(filter))).data;
     }
 
