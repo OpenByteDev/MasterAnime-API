@@ -213,7 +213,9 @@ export class MasterAnimeAPI {
         return (await axios.get(UriHelper.getFilter(filter))).data;
     }
     public static async getEpisodeDetailed(anime_slug: string, episode: number): Promise<EpisodeDetailed> {
-        const url = UriHelper.getEpisode(anime_slug, episode);
+        return MasterAnimeAPI.getEpisodeDetailedFromUrl(UriHelper.getEpisode(anime_slug, episode));
+    }
+    public static async getEpisodeDetailedFromUrl(url: string): Promise<EpisodeDetailed> {
         const { data: html } = await axios.get(url);
         const argsRegex = /<script[^>]*>\s*(?:(?:var|let|const)\s*)?args\s*=\s*({.*?})\s*(;\s*)?<\/script>/;
         const argsData = argsRegex.exec(html);
