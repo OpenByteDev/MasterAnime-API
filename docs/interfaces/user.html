@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Episode | MasterAnime API</title>
+	<title>User | MasterAnime API</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="episode.html">Episode</a>
+					<a href="user.html">User</a>
 				</li>
 			</ul>
-			<h1>Interface Episode</h1>
+			<h1>Interface User</h1>
 		</div>
 	</div>
 </header>
@@ -68,12 +68,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Episode</span>
-						<ul class="tsd-hierarchy">
-							<li>
-								<a href="currentepisode.html" class="tsd-signature-type">CurrentEpisode</a>
-							</li>
-						</ul>
+						<span class="target">User</span>
 					</li>
 				</ul>
 			</section>
@@ -84,10 +79,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="episode.html#episode-1" class="tsd-kind-icon">episode</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="episode.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="episode.html#info" class="tsd-kind-icon">info</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="episode.html#thumbnail" class="tsd-kind-icon">thumbnail</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="user.html#avatar" class="tsd-kind-icon">avatar</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="user.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="user.html#is_online" class="tsd-kind-icon">is_<wbr>online</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="user.html#last_time_seen" class="tsd-kind-icon">last_<wbr>time_<wbr>seen</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="user.html#name" class="tsd-kind-icon">name</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,12 +92,12 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="episode-1" class="tsd-anchor"></a>
-					<h3>episode</h3>
-					<div class="tsd-signature tsd-kind-icon">episode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="avatar" class="tsd-anchor"></a>
+					<h3>avatar</h3>
+					<div class="tsd-signature tsd-kind-icon">avatar<span class="tsd-signature-symbol">:</span> <a href="avatar.html" class="tsd-signature-type">Avatar</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/OpenByteDev/MasterAnime-API/blob/7158ddd/lib/MasterAnimeAPI.ts#L142">MasterAnimeAPI.ts:142</a></li>
+							<li>Defined in <a href="https://github.com/OpenByteDev/MasterAnime-API/blob/7158ddd/lib/MasterAnimeAPI.ts#L162">MasterAnimeAPI.ts:162</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -111,27 +107,37 @@
 					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/OpenByteDev/MasterAnime-API/blob/7158ddd/lib/MasterAnimeAPI.ts#L141">MasterAnimeAPI.ts:141</a></li>
+							<li>Defined in <a href="https://github.com/OpenByteDev/MasterAnime-API/blob/7158ddd/lib/MasterAnimeAPI.ts#L158">MasterAnimeAPI.ts:158</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="info" class="tsd-anchor"></a>
-					<h3>info</h3>
-					<div class="tsd-signature tsd-kind-icon">info<span class="tsd-signature-symbol">:</span> <a href="episodeinfo.html" class="tsd-signature-type">EpisodeInfo</a></div>
+					<a name="is_online" class="tsd-anchor"></a>
+					<h3>is_<wbr>online</h3>
+					<div class="tsd-signature tsd-kind-icon">is_<wbr>online<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/OpenByteDev/MasterAnime-API/blob/7158ddd/lib/MasterAnimeAPI.ts#L66">MasterAnimeAPI.ts:66</a></li>
+							<li>Defined in <a href="https://github.com/OpenByteDev/MasterAnime-API/blob/7158ddd/lib/MasterAnimeAPI.ts#L161">MasterAnimeAPI.ts:161</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="thumbnail" class="tsd-anchor"></a>
-					<h3>thumbnail</h3>
-					<div class="tsd-signature tsd-kind-icon">thumbnail<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="last_time_seen" class="tsd-anchor"></a>
+					<h3>last_<wbr>time_<wbr>seen</h3>
+					<div class="tsd-signature tsd-kind-icon">last_<wbr>time_<wbr>seen<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/OpenByteDev/MasterAnime-API/blob/7158ddd/lib/MasterAnimeAPI.ts#L67">MasterAnimeAPI.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/OpenByteDev/MasterAnime-API/blob/7158ddd/lib/MasterAnimeAPI.ts#L160">MasterAnimeAPI.ts:160</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/OpenByteDev/MasterAnime-API/blob/7158ddd/lib/MasterAnimeAPI.ts#L159">MasterAnimeAPI.ts:159</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -174,27 +180,9 @@
 					<li class=" tsd-kind-interface">
 						<a href="currentepisode.html" class="tsd-kind-icon">Current<wbr>Episode</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class=" tsd-kind-interface">
 						<a href="episode.html" class="tsd-kind-icon">Episode</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="episode.html#episode-1" class="tsd-kind-icon">episode</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="episode.html#id" class="tsd-kind-icon">id</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="episode.html#info" class="tsd-kind-icon">info</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="episode.html#thumbnail" class="tsd-kind-icon">thumbnail</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="episodedetailed.html" class="tsd-kind-icon">Episode<wbr>Detailed</a>
 					</li>
@@ -228,9 +216,30 @@
 					<li class=" tsd-kind-interface">
 						<a href="trending.html" class="tsd-kind-icon">Trending</a>
 					</li>
-					<li class=" tsd-kind-interface">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
 						<a href="user.html" class="tsd-kind-icon">User</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="user.html#avatar" class="tsd-kind-icon">avatar</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="user.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="user.html#is_online" class="tsd-kind-icon">is_<wbr>online</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="user.html#last_time_seen" class="tsd-kind-icon">last_<wbr>time_<wbr>seen</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="user.html#name" class="tsd-kind-icon">name</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="wallpaper.html" class="tsd-kind-icon">Wallpaper</a>
 					</li>
