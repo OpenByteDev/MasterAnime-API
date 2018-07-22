@@ -6,6 +6,7 @@ const { MasterAnimeAPI: api, Filter } = require('../dist/index');
         'anime': () => api.getAnime(1),
         'anime_detailed': () => api.getAnimeDetailed(1),
         'episode': () => api.getEpisode(1, 1),
+        'episode_detailed': () => api.getEpisodeDetailed('2756-saiki-kusuo-no-ps-nan-2', 1),
         'episode_url': () => api.getEpisodeUrl(1, 1),
         'trending': () => api.getTrending(),
         'releases': () => api.getReleases(),
