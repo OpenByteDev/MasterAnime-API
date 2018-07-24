@@ -1,6 +1,6 @@
 {
     "name": "masteranime-api",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "description": "An api interface for masterani.me",
     "author": "OpenByte <development.openbyte@gmail.com>",
     "main": "dist/index.js",
