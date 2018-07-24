@@ -217,7 +217,7 @@ export class MasterAnimeAPI {
     }
     public static async getEpisodeDetailedFromUrl(url: string): Promise<EpisodeDetailed> {
         const { data: html } = await axios.get(url);
-        const argsRegex = /<script[^>]*>\s*(?:(?:var|let|const)\s*)?args\s*=\s*({.*?})\s*(;\s*)?<\/script>/;
+        const argsRegex = /<script[^>]*>\s*(?:(?:var|let|const)\s*)?args\s*=\s*({.*?})\s*(;\s*)?<\/script>/i;
         const argsData = argsRegex.exec(html);
         if (argsData === null || argsData.length < 2)
             return Promise.reject(new Error('Unable to find data'));
