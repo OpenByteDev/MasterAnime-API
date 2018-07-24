@@ -24,7 +24,7 @@
         "typescript": "^2.9.2"
     },
     "scripts": {
-        "cover": "istanbul cover test/test.js -- -R spec",
+        "cover": "istanbul cover --include-all-sources --root ./dist test/test.js -- -R spec",
         "test": "node test/test.js",
         "lint": "tslint -p .",
         "lint-fix": "tslint -p . --fix",
