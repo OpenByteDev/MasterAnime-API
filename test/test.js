@@ -36,7 +36,7 @@ function delay(delay) {
             completeSuccess = false;
         }
 
-        await delay(1000);
+        await delay(5000);
     }
 
     if (!completeSuccess)
