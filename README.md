@@ -1,6 +1,6 @@
 # MasterAnime API
 
-[![Build Status](https://travis-ci.org/OpenByteDev/masteranime-api.svg?branch=master)](https://travis-ci.org/OpenByteDev/Smasteranime-api)
+[![Build Status](https://travis-ci.org/OpenByteDev/masteranime-api.svg?branch=master)](https://travis-ci.org/OpenByteDev/masteranime-api)
 [![npm version](https://badge.fury.io/js/masteranime-api.svg)](https://www.npmjs.com/package/masteranime-api) 
 [![Coverage Status](https://coveralls.io/repos/github/OpenByteDev/MasterAnime-API/badge.svg?branch=master)](https://coveralls.io/github/OpenByteDev/MasterAnime-API?branch=master)
 [![Dependency Status](https://david-dm.org/OpenByteDev/masteranime-api/status.svg)](https://david-dm.org/OpenByteDev/masteranime-api)
