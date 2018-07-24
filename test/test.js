@@ -1,5 +1,9 @@
 const { MasterAnimeAPI: api, Filter } = require('../dist/index');
 
+function delay(delay) {
+    return new Promise (fulfill => setTimeout(fulfill, delay));
+}
+
 (async () => {
 
     const tests = {
@@ -31,6 +35,8 @@ const { MasterAnimeAPI: api, Filter } = require('../dist/index');
             console.error(name + " " + false);
             completeSuccess = false;
         }
+
+        await delay(1000);
     }
 
     if (!completeSuccess)
