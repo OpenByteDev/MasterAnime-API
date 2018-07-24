@@ -2,7 +2,7 @@ import { Filter, Type } from './Filter';
 import { Id, Uri, UriHelper } from './UriHelper';
 
 import axios from 'axios';
-import jsonic = require("jsonic");
+import jsonic = require('jsonic');
 
 export interface Anime {
     id: number;
