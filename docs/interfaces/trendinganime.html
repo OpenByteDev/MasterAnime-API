@@ -3,17 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>MasterAnime API</title>
+	<title>TrendingAnime | MasterAnime API</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">MasterAnime API</a>
+					<a href="../index.html" class="title">MasterAnime API</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -51,155 +51,223 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="globals.html">Globals</a>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="trendinganime.html">TrendingAnime</a>
 				</li>
 			</ul>
-			<h1> MasterAnime API</h1>
+			<h1>Interface TrendingAnime</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<h1 id="masteranime-api">MasterAnime API</h1>
-				<p><a href="https://travis-ci.org/OpenByteDev/MasterAnime-API"><img src="https://travis-ci.org/OpenByteDev/MasterAnime-API.svg?branch=master" alt="Build Status"></a>
-					<a href="https://www.npmjs.com/package/masteranime-api"><img src="https://badge.fury.io/js/masteranime-api.svg" alt="npm version"></a>
-					<a href="https://codeclimate.com/github/OpenByteDev/MasterAnime-API/maintainability"><img src="https://api.codeclimate.com/v1/badges/b8f4e4eedcb246e39962/maintainability" alt="Maintainability"></a>
-					<a href="https://codeclimate.com/github/OpenByteDev/MasterAnime-API/test_coverage"><img src="https://api.codeclimate.com/v1/badges/b8f4e4eedcb246e39962/test_coverage" alt="Test Coverage"></a>
-					<a href="https://david-dm.org/OpenByteDev/MasterAnime-API"><img src="https://david-dm.org/OpenByteDev/MasterAnime-API/status.svg" alt="Dependency Status"></a>
-					<a href="https://david-dm.org/OpenByteDev/MasterAnime-API?type=dev"><img src="https://david-dm.org/OpenByteDev/MasterAnime-API/dev-status.svg" alt="DevDependency Status"></a>
-					<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="License"></a>
-				<a href=""><img src="https://img.shields.io/badge/doge-wow-yellow.svg" alt="Doge"></a></p>
-				<p>An api interface for <a href="https://www.masterani.me/">MasterAnime</a></p>
-				<hr>
-				<h2 id="getting-started">Getting Started</h2>
-				<h3 id="installation">Installation</h3>
-				<pre><code class="lang-bash">$ npm i masteranime-api
-</code></pre>
-				<h3 id="usage">Usage</h3>
-				<pre><code class="lang-js"><span class="hljs-keyword">const</span> { MasterAnimeAPI } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'masteranime-api'</span>);
-
-<span class="hljs-function">(<span class="hljs-params"><span class="hljs-keyword">async</span> (</span>) =&gt;</span> {
-    <span class="hljs-keyword">const</span> trending = <span class="hljs-keyword">await</span> MasterAnimeAPI.getTrending();
-    trending.popular_today.forEach(<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(e.title));
-})();
-</code></pre>
-				<h3 id="api">API</h3>
-				<p>The API generated with <a href="http://typedoc.org/">TypeDoc</a> can be found <a href="https://openbytedev.github.io/MasterAnime-API/">here</a>.</p>
-			</div>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="animebasic.html" class="tsd-signature-type">AnimeBasic</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">TrendingAnime</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trendinganime.html#poster" class="tsd-kind-icon">poster</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="trendinganime.html#slug" class="tsd-kind-icon">slug</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="trendinganime.html#title" class="tsd-kind-icon">title</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trendinganime.html#total" class="tsd-kind-icon">total</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="poster" class="tsd-anchor"></a>
+					<h3>poster</h3>
+					<div class="tsd-signature tsd-kind-icon">poster<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in MasterAnimeAPI.ts:86</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="slug" class="tsd-anchor"></a>
+					<h3>slug</h3>
+					<div class="tsd-signature tsd-kind-icon">slug<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="animebasic.html">AnimeBasic</a>.<a href="animebasic.html#slug">slug</a></p>
+						<ul>
+							<li>Defined in MasterAnimeAPI.ts:9</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="title" class="tsd-anchor"></a>
+					<h3>title</h3>
+					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="animebasic.html">AnimeBasic</a>.<a href="animebasic.html#title">title</a></p>
+						<ul>
+							<li>Defined in MasterAnimeAPI.ts:8</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="total" class="tsd-anchor"></a>
+					<h3>total</h3>
+					<div class="tsd-signature tsd-kind-icon">total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in MasterAnimeAPI.ts:85</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
-						<a href="enums/order.html" class="tsd-kind-icon">Order</a>
+						<a href="../enums/order.html" class="tsd-kind-icon">Order</a>
 					</li>
 					<li class=" tsd-kind-enum">
-						<a href="enums/type.html" class="tsd-kind-icon">Type</a>
+						<a href="../enums/type.html" class="tsd-kind-icon">Type</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/filter.html" class="tsd-kind-icon">Filter</a>
+						<a href="../classes/filter.html" class="tsd-kind-icon">Filter</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/masteranimeapi.html" class="tsd-kind-icon">Master<wbr>AnimeAPI</a>
+						<a href="../classes/masteranimeapi.html" class="tsd-kind-icon">Master<wbr>AnimeAPI</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/urihelper.html" class="tsd-kind-icon">Uri<wbr>Helper</a>
+						<a href="../classes/urihelper.html" class="tsd-kind-icon">Uri<wbr>Helper</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/anime.html" class="tsd-kind-icon">Anime</a>
+						<a href="anime.html" class="tsd-kind-icon">Anime</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/animebasic.html" class="tsd-kind-icon">Anime<wbr>Basic</a>
+						<a href="animebasic.html" class="tsd-kind-icon">Anime<wbr>Basic</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/animedetailed.html" class="tsd-kind-icon">Anime<wbr>Detailed</a>
+						<a href="animedetailed.html" class="tsd-kind-icon">Anime<wbr>Detailed</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/animedetailed2.html" class="tsd-kind-icon">Anime<wbr>Detailed2</a>
+						<a href="animedetailed2.html" class="tsd-kind-icon">Anime<wbr>Detailed2</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/animeinfo.html" class="tsd-kind-icon">Anime<wbr>Info</a>
+						<a href="animeinfo.html" class="tsd-kind-icon">Anime<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/animeinfo2.html" class="tsd-kind-icon">Anime<wbr>Info2</a>
+						<a href="animeinfo2.html" class="tsd-kind-icon">Anime<wbr>Info2</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/animerelease.html" class="tsd-kind-icon">Anime<wbr>Release</a>
+						<a href="animerelease.html" class="tsd-kind-icon">Anime<wbr>Release</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/avatar.html" class="tsd-kind-icon">Avatar</a>
+						<a href="avatar.html" class="tsd-kind-icon">Avatar</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/currentepisode2.html" class="tsd-kind-icon">Current<wbr>Episode2</a>
+						<a href="currentepisode2.html" class="tsd-kind-icon">Current<wbr>Episode2</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/episode.html" class="tsd-kind-icon">Episode</a>
+						<a href="episode.html" class="tsd-kind-icon">Episode</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/episode2.html" class="tsd-kind-icon">Episode2</a>
+						<a href="episode2.html" class="tsd-kind-icon">Episode2</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/episodedetailed.html" class="tsd-kind-icon">Episode<wbr>Detailed</a>
+						<a href="episodedetailed.html" class="tsd-kind-icon">Episode<wbr>Detailed</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/episodeinfo.html" class="tsd-kind-icon">Episode<wbr>Info</a>
+						<a href="episodeinfo.html" class="tsd-kind-icon">Episode<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/filterlisting.html" class="tsd-kind-icon">Filter<wbr>Listing</a>
+						<a href="filterlisting.html" class="tsd-kind-icon">Filter<wbr>Listing</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/filterresult.html" class="tsd-kind-icon">Filter<wbr>Result</a>
+						<a href="filterresult.html" class="tsd-kind-icon">Filter<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/genre.html" class="tsd-kind-icon">Genre</a>
+						<a href="genre.html" class="tsd-kind-icon">Genre</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/host.html" class="tsd-kind-icon">Host</a>
+						<a href="host.html" class="tsd-kind-icon">Host</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/mirror.html" class="tsd-kind-icon">Mirror</a>
+						<a href="mirror.html" class="tsd-kind-icon">Mirror</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/posterinfo.html" class="tsd-kind-icon">Poster<wbr>Info</a>
+						<a href="posterinfo.html" class="tsd-kind-icon">Poster<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/release.html" class="tsd-kind-icon">Release</a>
+						<a href="release.html" class="tsd-kind-icon">Release</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/synonym.html" class="tsd-kind-icon">Synonym</a>
+						<a href="synonym.html" class="tsd-kind-icon">Synonym</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/trending.html" class="tsd-kind-icon">Trending</a>
+						<a href="trending.html" class="tsd-kind-icon">Trending</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
+						<a href="trendinganime.html" class="tsd-kind-icon">Trending<wbr>Anime</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="trendinganime.html#poster" class="tsd-kind-icon">poster</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="trendinganime.html#slug" class="tsd-kind-icon">slug</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="trendinganime.html#title" class="tsd-kind-icon">title</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="trendinganime.html#total" class="tsd-kind-icon">total</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface">
+						<a href="user.html" class="tsd-kind-icon">User</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/trendinganime.html" class="tsd-kind-icon">Trending<wbr>Anime</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/user.html" class="tsd-kind-icon">User</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/wallpaper.html" class="tsd-kind-icon">Wallpaper</a>
+						<a href="wallpaper.html" class="tsd-kind-icon">Wallpaper</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#id" class="tsd-kind-icon">Id</a>
+						<a href="../globals.html#id" class="tsd-kind-icon">Id</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#uri" class="tsd-kind-icon">Uri</a>
+						<a href="../globals.html#uri" class="tsd-kind-icon">Uri</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#api_base_url" class="tsd-kind-icon">API_<wbr>BASE_<wbr>URL</a>
+						<a href="../globals.html#api_base_url" class="tsd-kind-icon">API_<wbr>BASE_<wbr>URL</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#base_url" class="tsd-kind-icon">BASE_<wbr>URL</a>
+						<a href="../globals.html#base_url" class="tsd-kind-icon">BASE_<wbr>URL</a>
 					</li>
 				</ul>
 			</nav>
@@ -269,7 +337,7 @@
 	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
