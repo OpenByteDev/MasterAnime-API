@@ -1,0 +1,16 @@
+{
+    "check-coverage": true,
+    "all": true,
+    "extension": [
+        ".ts"
+    ],
+    "include": [
+        "lib/**/*.ts"
+    ],
+    "reporter": [
+        "lcov",
+        "text",
+        "text-summary"
+    ],
+    "report-dir": "coverage"
+}

@@ -15,17 +15,28 @@
         "query-string": "^6.1.0"
     },
     "devDependencies": {
+        "@types/chai": "^4.1.4",
+        "@types/chai-things": "0.0.33",
         "@types/jsonic": "^0.3.0",
-        "@types/query-string": "^6.1.0",
+        "@types/mocha": "^5.2.5",
         "@types/node": "^10.5.2",
+        "@types/query-string": "^6.1.0",
+        "@types/valid-url": "^1.0.2",
+        "chai": "^4.1.2",
+        "chai-things": "^0.2.0",
         "istanbul": "^1.0.0-alpha.2",
+        "mocha": "^5.2.0",
+        "nyc": "^12.0.2",
+        "ts-node": "^7.0.0",
         "tslint": "^5.11.0",
+        "tslint-eslint-rules": "^5.3.1",
         "typedoc": "^0.11.1",
-        "typescript": "^2.9.2"
+        "typescript": "^2.9.2",
+        "valid-url": "^1.0.9"
     },
     "scripts": {
-        "cover": "istanbul cover --include-all-sources --root ./dist test/test.js -- -R spec",
-        "test": "node test/test.js",
+        "cover": "nyc npm run test",
+        "test": "mocha -r ts-node/register test/*.spec.ts",
         "lint": "tslint -p .",
         "lint-fix": "tslint -p . --fix",
         "build": "tsc",

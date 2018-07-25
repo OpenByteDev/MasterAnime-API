@@ -4,10 +4,12 @@ import { Id, Uri, UriHelper } from './UriHelper';
 import axios from 'axios';
 import jsonic = require('jsonic');
 
-export interface Anime {
-    id: number;
+export interface AnimeBasic {
     title: string;
     slug: string;
+}
+export interface Anime extends AnimeBasic {
+    id: number;
     status: number;
     type: Type;
     score: number;
@@ -24,10 +26,8 @@ export interface AnimeDetailed {
     wallpapers: Wallpaper[];
     episodes: Episode[];
 }
-export interface AnimeInfo {
+export interface AnimeInfo extends AnimeBasic {
     id: number;
-    title: string;
-    slug: string;
     synopsis: string;
     status: number;
     type: Type;
@@ -78,21 +78,24 @@ export interface EpisodeInfo {
     description: string | null;
 }
 export interface Trending {
-    being_watched: Anime[];
-    popular_today: Anime[];
+    being_watched: TrendingAnime[];
+    popular_today: TrendingAnime[];
+}
+export interface TrendingAnime extends AnimeBasic {
+    total: number;
+    poster: string;
 }
 export interface Release {
-    anime: {
-        id: number;
-        title: string;
-        slug: string;
-        duration: number | null;
-        age: string;
-        poster: string;
-        wallpaper: string | null;
-    };
+    anime: AnimeRelease;
     episode: string;
     created_at: string;
+}
+export interface AnimeRelease extends AnimeBasic {
+    id: number;
+    duration: number | null;
+    age: string;
+    poster: string;
+    wallpaper: string | null;
 }
 export interface FilterListing {
     total: number;
@@ -105,11 +108,9 @@ export interface FilterListing {
     to: number;
     data: FilterResult[];
 }
-export interface FilterResult {
+export interface FilterResult extends AnimeBasic {
     id: number;
-    title: string;
-    slug: string;
-    status: string;
+    status: number;
     score: number;
     episode_count: number | null;
     started_airing_date: string;
@@ -124,24 +125,24 @@ export interface PosterInfo {
     file: string;
 }
 export interface EpisodeDetailed {
-    anime: Anime;
+    anime: AnimeDetailed2;
     mirrors: Mirror[];
     auto_update: number[];
 }
-export interface Anime {
-    info: AnimeInfo;
+export interface AnimeDetailed2 {
+    info: AnimeInfo2;
     poster: string;
     episodes: {
-        current: CurrentEpisode;
-        next: Episode;
-        prev: Episode;
+        current: CurrentEpisode2;
+        next: Episode2 | null;
+        prev: Episode2 | null;
     };
 }
-export interface Episode {
+export interface Episode2 {
     id: number;
     episode: string;
 }
-export interface CurrentEpisode extends Episode {
+export interface CurrentEpisode2 extends Episode2 {
     subbed: number;
     dubbed: number;
     type: number;
@@ -159,7 +160,7 @@ export interface User {
     name: string;
     last_time_seen: string;
     is_online: boolean;
-    avatar: Avatar;
+    avatar: Avatar | null;
 }
 export interface Avatar {
     id: string;
@@ -167,10 +168,8 @@ export interface Avatar {
     extension: string;
     file: string;
 }
-export interface AnimeInfo {
+export interface AnimeInfo2 extends AnimeBasic {
     id: number;
-    title: string;
-    slug: string;
     episode_length: number;
 }
 export interface Mirror {
