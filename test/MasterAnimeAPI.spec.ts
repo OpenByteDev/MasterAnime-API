@@ -1,4 +1,4 @@
-import {Filter, MasterAnimeAPI } from '../lib';
+import { Filter, MasterAnimeAPI } from '../lib';
 
 import chai = require('chai');
 import chai_things = require('chai-things');
@@ -247,6 +247,7 @@ describe('MasterAnimeAPI', () => {
             const anime = await get();
             should.exist(anime);
             checkAnime(anime);
+            return;
         });
     });
     describe('#getAnimeDetailed()', async () => {
@@ -254,10 +255,11 @@ describe('MasterAnimeAPI', () => {
         it('should return a promise', () => {
             get().should.be.instanceof(Promise);
         });
-        it('should return an AnimeDetailed object', async () => {
+        it(('should return an AnimeDetailed object'), async () => {
             const anime = await get();
             should.exist(anime);
             checkAnimeDetailed(anime);
+            return;
         });
     });
     describe('#getEpisode()', async () => {
@@ -265,10 +267,11 @@ describe('MasterAnimeAPI', () => {
         it('should return a promise', () => {
             get().should.be.instanceof(Promise);
         });
-        it('should return an Episode object', async () => {
+        it(('should return an Episode object'), async () => {
             const episode = await get();
             should.exist(episode);
             checkEpisode(episode);
+            return;
         });
     });
     describe('#getEpisodeUrl()', async () => {
@@ -276,11 +279,12 @@ describe('MasterAnimeAPI', () => {
         it('should return a promise', () => {
             get().should.be.instanceof(Promise);
         });
-        it('should return a valid url', async () => {
+        it(('should return a valid url'), async () => {
             const url = await get();
             should.exist(url);
             url.should.be.a('string');
             validUrl.isUri(url).should.not.be.undefined;
+            return;
         });
     });
     describe('#getTrending()', async () => {
@@ -288,10 +292,11 @@ describe('MasterAnimeAPI', () => {
         it('should return a promise', () => {
             get().should.be.instanceof(Promise);
         });
-        it('should return a Trending object', async () => {
+        it(('should return a Trending object'), async () => {
             const trending = await get();
             should.exist(trending);
             checkTrending(trending);
+            return;
         });
     });
     describe('#getReleases()', async () => {
@@ -299,11 +304,12 @@ describe('MasterAnimeAPI', () => {
         it('should return a promise', () => {
             get().should.be.instanceof(Promise);
         });
-        it('should return an array of Release objects', async () => {
+        it(('should return an array of Release objects'), async () => {
             const releases = await get();
             should.exist(releases);
             (releases as any).should.be.an('array');
             releases.forEach(checkRelease);
+            return;
         });
     });
     describe('#getFiltering()', async () => {
@@ -311,10 +317,11 @@ describe('MasterAnimeAPI', () => {
         it('should return a promise', () => {
             get().should.be.instanceof(Promise);
         });
-        it('should return a FilterListing object', async () => {
+        it(('should return a FilterListing object'), async () => {
             const filterListing = await get();
             should.exist(filterListing);
             checkFilterListing(filterListing);
+            return;
         });
     });
     describe('#getEpisodeDetailed()', async () => {
@@ -322,10 +329,11 @@ describe('MasterAnimeAPI', () => {
         it('should return a promise', () => {
             get().should.be.instanceof(Promise);
         });
-        it('should return a EpisodeDetailed object', async () => {
+        it(('should return a EpisodeDetailed object'), async () => {
             const episodeDetailed = await get();
             should.exist(episodeDetailed);
             checkEpisodeDetailed(episodeDetailed);
+            return;
         });
     });
     describe('#getEpisodeDetailedFromUrl()', async () => {
@@ -333,7 +341,7 @@ describe('MasterAnimeAPI', () => {
         it('should return a promise', () => {
             get().should.be.instanceof(Promise);
         });
-        it('should return a EpisodeDetailed object', async () => {
+        it(('should return a EpisodeDetailed object'), async () => {
             const episodeDetailed = await get();
             should.exist(episodeDetailed);
             checkEpisodeDetailed(episodeDetailed);
