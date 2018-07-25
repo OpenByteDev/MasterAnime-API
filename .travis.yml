@@ -1,12 +1,12 @@
 language: node_js
 node_js:
-- '10'
+  - '10'
 notifications:
   email: false
 script:
-- npm run lint
-- npm run build
-- npm run cover
+  - npm run lint
+  - npm run build
+  - npm run cover
 
 addons:
   code_climate:
