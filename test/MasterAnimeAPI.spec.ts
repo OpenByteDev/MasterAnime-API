@@ -238,7 +238,7 @@ function checkHost(host) {
     host.should.have.property('embed_suffix').that.satisfies(e => typeof e === 'string' || e === null);
 }
 describe('MasterAnimeAPI', () => {
-    beforeEach(done => setTimeout(done, 5000));
+    beforeEach(() => new Promise(resolve => setTimeout(resolve, 5000)));
     describe('#getAnime()', async () => {
         const get = () => MasterAnimeAPI.getAnime(1);
         it('should return a promise', () => {
