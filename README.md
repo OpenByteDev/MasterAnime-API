@@ -9,7 +9,7 @@
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
 [![Doge](https://img.shields.io/badge/doge-wow-yellow.svg)]()
 
-An api interface for masterani.me
+An api interface for [MasterAnime](https://www.masterani.me/)
 
 <hr>
 
