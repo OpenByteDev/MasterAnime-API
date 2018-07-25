@@ -1,13 +1,11 @@
 import { Filter, MasterAnimeAPI } from '../lib';
 
 import chai = require('chai');
-import chai_things = require('chai-things');
 import 'mocha';
 
 import validUrl = require('valid-url');
 
 const should = chai.should();
-chai.use(chai_things);
 
 function checkAnimeBasic(animeBasic) {
     animeBasic.should.have.property('title').that.is.a('string');
