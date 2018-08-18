@@ -15,11 +15,9 @@
     },
     "devDependencies": {
         "@types/chai": "^4.1.4",
-        "@types/jsonic": "^0.3.0",
         "@types/mocha": "^5.2.5",
         "@types/node": "^10.7.1",
         "@types/query-string": "^6.1.0",
-        "@types/valid-url": "^1.0.2",
         "chai": "^4.1.2",
         "istanbul": "^1.1.0-alpha.1",
         "mocha": "^5.2.0",
@@ -27,7 +25,7 @@
         "ts-node": "^7.0.1",
         "tslint": "^5.11.0",
         "tslint-eslint-rules": "^5.4.0",
-        "typescript": "^3.1.0-dev.20180817",
+        "typescript": "^3.1.0-dev.20180818",
         "typedoc": "^0.12.0",
         "valid-url": "^1.0.9"
     },
