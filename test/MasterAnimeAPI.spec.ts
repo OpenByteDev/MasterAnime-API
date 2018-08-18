@@ -1,7 +1,6 @@
-import { Filter, MasterAnimeAPI } from '../lib';
-
 import chai = require('chai');
 import 'mocha';
+import { Filter, MasterAnimeAPI } from '../lib';
 
 import validUrl = require('valid-url');
 
@@ -11,6 +10,7 @@ function checkAnimeBasic(animeBasic) {
     animeBasic.should.have.property('title').that.is.a('string');
     animeBasic.should.have.property('slug').that.is.a('string');
 }
+
 function checkAnime(anime) {
     anime.should.have.property('id').that.is.a('number');
     checkAnimeBasic(anime);
@@ -21,6 +21,7 @@ function checkAnime(anime) {
     anime.should.have.property('started_airing_date').that.is.a('string');
     anime.should.have.property('finished_airing_date').that.satisfies(e => typeof e === 'string' || e === null);
 }
+
 function checkAnimeDetailed(animeDetailed) {
     animeDetailed.should.have.property('info').that.is.an('object');
     checkAnimeInfo(animeDetailed.info);
@@ -35,6 +36,7 @@ function checkAnimeDetailed(animeDetailed) {
     animeDetailed.should.have.property('episodes').that.is.an('array');
     animeDetailed.episodes.forEach(checkEpisode);
 }
+
 function checkAnimeInfo(animeInfo) {
     animeInfo.should.have.property('id').that.is.a('number');
     checkAnimeBasic(animeInfo);
@@ -60,23 +62,28 @@ function checkAnimeInfo(animeInfo) {
     animeInfo.should.have.property('wallpaper_offset').that.is.a('number');
     animeInfo.should.have.property('franchise_count').that.is.a('number');
 }
+
 function checkSynonym(synonym) {
     synonym.should.have.property('title').that.is.a('string');
     synonym.should.have.property('type').that.is.a('number');
 }
+
 function checkGenre(genre) {
     genre.should.have.property('id').that.is.a('number');
     genre.should.have.property('name').that.is.a('string');
 }
+
 function checkWallpaper(wallpaper) {
     wallpaper.should.have.property('id').that.is.a('string');
     wallpaper.should.have.property('file').that.is.a('string');
 }
+
 function checkEpisode(episode) {
     episode.should.have.property('info').that.is.a('object');
     checkEpisodeInfo(episode.info);
     episode.should.have.property('thumbnail').that.is.a('string');
 }
+
 function checkEpisodeInfo(episodeInfo) {
     episodeInfo.should.have.property('id').that.is.a('number');
     episodeInfo.should.have.property('anime_id').that.is.a('number');
@@ -88,23 +95,27 @@ function checkEpisodeInfo(episodeInfo) {
     episodeInfo.should.have.property('duration').that.satisfies(e => typeof e === 'number' || e === null);
     episodeInfo.should.have.property('description').that.satisfies(e => typeof e === 'string' || e === null);
 }
+
 function checkTrending(trending) {
     trending.should.have.property('being_watched').that.is.an('array');
     trending.being_watched.forEach(checkTrendingAnime);
     trending.should.have.property('popular_today').that.is.an('array');
     trending.popular_today.forEach(checkTrendingAnime);
 }
+
 function checkTrendingAnime(trendingAnime) {
     checkAnimeBasic(trendingAnime);
     trendingAnime.should.have.property('total').that.is.a('number');
     trendingAnime.should.have.property('poster').that.is.a('string');
 }
+
 function checkRelease(release) {
     release.should.have.property('anime').that.is.an('object');
     checkAnimeRelease(release.anime);
     release.should.have.property('episode').that.is.a('string');
     release.should.have.property('created_at').that.is.a('string');
 }
+
 function checkAnimeRelease(animeRelease) {
     animeRelease.should.have.property('id').that.is.a('number');
     checkAnimeBasic(animeRelease);
@@ -113,6 +124,7 @@ function checkAnimeRelease(animeRelease) {
     animeRelease.should.have.property('poster').that.is.a('string');
     animeRelease.should.have.property('wallpaper').that.satisfies(e => typeof e === 'string' || e === null);
 }
+
 function checkFilterListing(filterListing) {
     filterListing.should.have.property('total').that.is.a('number');
     filterListing.should.have.property('per_page').that.is.a('number');
@@ -125,6 +137,7 @@ function checkFilterListing(filterListing) {
     filterListing.should.have.property('data').that.is.an('array');
     filterListing.data.forEach(checkFilterResult);
 }
+
 function checkFilterResult(filterResult) {
     filterResult.should.have.property('id').that.is.a('number');
     checkAnimeBasic(filterResult);
@@ -138,12 +151,14 @@ function checkFilterResult(filterResult) {
     filterResult.should.have.property('poster').that.is.an('object');
     checkPosterInfo(filterResult.poster);
 }
+
 function checkPosterInfo(posterInfo) {
     posterInfo.should.have.property('id').that.is.a('string');
     posterInfo.should.have.property('path').that.is.a('string');
     posterInfo.should.have.property('extension').that.is.a('string');
     posterInfo.should.have.property('file').that.is.a('string');
 }
+
 function checkEpisodeDetailed(episodeDetailed) {
     episodeDetailed.should.have.property('anime').that.is.an('object');
     checkAnimeDetailed2(episodeDetailed.anime);
@@ -152,6 +167,7 @@ function checkEpisodeDetailed(episodeDetailed) {
     episodeDetailed.should.have.property('auto_update').that.is.an('array');
     episodeDetailed.auto_update.forEach(number => number.should.be.a('number'));
 }
+
 function checkAnimeDetailed2(animeDetailed2) {
     animeDetailed2.should.have.property('info').that.is.an('object');
     checkAnimeInfo2(animeDetailed2.info);
@@ -170,11 +186,13 @@ function checkAnimeDetailed2(animeDetailed2) {
     animeDetailed2.episodes.should.have.property('next').that.satisfies(checkEpisode2OrNull);
     animeDetailed2.episodes.should.have.property('prev').that.satisfies(checkEpisode2OrNull);
 }
+
 function checkAnimeInfo2(animeInfo2) {
     checkAnimeBasic(animeInfo2);
     animeInfo2.should.have.property('id').that.is.a('number');
     animeInfo2.should.have.property('episode_length').that.is.a('number');
 }
+
 function checkCurrentEpisode2(currentEpisode2) {
     checkEpisode2(currentEpisode2);
     currentEpisode2.should.have.property('subbed').that.is.a('number');
@@ -196,10 +214,12 @@ function checkCurrentEpisode2(currentEpisode2) {
     });
     currentEpisode2.should.have.property('extra_viewers').that.is.a('number');
 }
+
 function checkEpisode2(episode2) {
     episode2.should.have.property('id').that.is.a('number');
     episode2.should.have.property('episode').that.is.a('string');
 }
+
 function checkUser(user) {
     user.should.have.property('id').that.is.a('number');
     user.should.have.property('name').that.is.a('string');
@@ -214,12 +234,14 @@ function checkUser(user) {
         return true;
     });
 }
+
 function checkAvatar(avatar) {
     avatar.should.have.property('id').that.is.a('string');
     avatar.should.have.property('path').that.is.a('string');
     avatar.should.have.property('extension').that.is.a('string');
     avatar.should.have.property('file').that.is.a('string');
 }
+
 function checkMirror(mirror) {
     mirror.should.have.property('id').that.is.a('number');
     mirror.should.have.property('host_id').that.is.a('number');
@@ -229,12 +251,14 @@ function checkMirror(mirror) {
     mirror.should.have.property('host').that.is.an('object');
     checkHost(mirror.host);
 }
+
 function checkHost(host) {
     host.should.have.property('id').that.is.a('number');
     host.should.have.property('name').that.is.a('string');
     host.should.have.property('embed_prefix').that.is.a('string');
     host.should.have.property('embed_suffix').that.satisfies(e => typeof e === 'string' || e === null);
 }
+
 describe('MasterAnimeAPI', () => {
     beforeEach(() => new Promise(resolve => setTimeout(resolve, 5000)));
     describe('#getAnime()', async () => {

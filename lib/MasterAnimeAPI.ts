@@ -3,6 +3,7 @@ import { Id, Uri, UriHelper } from './UriHelper';
 
 import axios from 'axios';
 import jsonic = require('jsonic');
+import {AnimeDetailed2} from '../types/MasterAnimeAPI';
 
 export interface AnimeBasic {
     title: string;
