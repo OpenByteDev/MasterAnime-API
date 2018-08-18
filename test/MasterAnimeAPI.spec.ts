@@ -159,106 +159,6 @@ function checkPosterInfo(posterInfo) {
     posterInfo.should.have.property('file').that.is.a('string');
 }
 
-function checkEpisodeDetailed(episodeDetailed) {
-    episodeDetailed.should.have.property('anime').that.is.an('object');
-    checkAnimeDetailed2(episodeDetailed.anime);
-    episodeDetailed.should.have.property('mirrors').that.is.an('array');
-    episodeDetailed.mirrors.forEach(checkMirror);
-    episodeDetailed.should.have.property('auto_update').that.is.an('array');
-    episodeDetailed.auto_update.forEach(number => number.should.be.a('number'));
-}
-
-function checkAnimeDetailed2(animeDetailed2) {
-    animeDetailed2.should.have.property('info').that.is.an('object');
-    checkAnimeInfo2(animeDetailed2.info);
-    animeDetailed2.should.have.property('poster').that.is.a('string');
-    animeDetailed2.should.have.property('episodes').that.is.an('object');
-    animeDetailed2.episodes.should.have.property('current').that.is.an('object');
-    checkCurrentEpisode2(animeDetailed2.episodes.current);
-    const checkEpisode2OrNull = (episode) => {
-        if (episode === null)
-            return true;
-        if (typeof episode !== 'object')
-            return false;
-        checkEpisode2(episode);
-        return true;
-    };
-    animeDetailed2.episodes.should.have.property('next').that.satisfies(checkEpisode2OrNull);
-    animeDetailed2.episodes.should.have.property('prev').that.satisfies(checkEpisode2OrNull);
-}
-
-function checkAnimeInfo2(animeInfo2) {
-    checkAnimeBasic(animeInfo2);
-    animeInfo2.should.have.property('id').that.is.a('number');
-    animeInfo2.should.have.property('episode_length').that.is.a('number');
-}
-
-function checkCurrentEpisode2(currentEpisode2) {
-    checkEpisode2(currentEpisode2);
-    currentEpisode2.should.have.property('subbed').that.is.a('number');
-    currentEpisode2.should.have.property('dubbed').that.is.a('number');
-    currentEpisode2.should.have.property('type').that.is.a('number');
-    currentEpisode2.should.have.property('title').that.satisfies(e => typeof e === 'string' || e === null);
-    currentEpisode2.should.have.property('duration').that.satisfies(e => typeof e === 'number' || e === null);
-    currentEpisode2.should.have.property('created_at').that.is.a('string');
-    currentEpisode2.should.have.property('tvdb_id').that.satisfies(e => typeof e === 'number' || e === null);
-    currentEpisode2.should.have.property('description').that.satisfies(e => typeof e === 'string' || e === null);
-    currentEpisode2.should.have.property('aired').that.satisfies(e => typeof e === 'string' || e === null);
-    currentEpisode2.should.have.property('users').that.satisfies(users => {
-        if (users === null)
-            return true;
-        if (!Array.isArray(users))
-            return false;
-        users.forEach(checkUser);
-        return true;
-    });
-    currentEpisode2.should.have.property('extra_viewers').that.is.a('number');
-}
-
-function checkEpisode2(episode2) {
-    episode2.should.have.property('id').that.is.a('number');
-    episode2.should.have.property('episode').that.is.a('string');
-}
-
-function checkUser(user) {
-    user.should.have.property('id').that.is.a('number');
-    user.should.have.property('name').that.is.a('string');
-    user.should.have.property('last_time_seen').that.is.a('string');
-    user.should.have.property('is_online').that.is.a('boolean');
-    user.should.have.property('avatar').that.satisfies(avatar => {
-        if (avatar === null)
-            return true;
-        if (typeof avatar !== 'object')
-            return false;
-        checkAvatar(user.avatar);
-        return true;
-    });
-}
-
-function checkAvatar(avatar) {
-    avatar.should.have.property('id').that.is.a('string');
-    avatar.should.have.property('path').that.is.a('string');
-    avatar.should.have.property('extension').that.is.a('string');
-    avatar.should.have.property('file').that.is.a('string');
-}
-
-function checkMirror(mirror) {
-    mirror.should.have.property('id').that.is.a('number');
-    mirror.should.have.property('host_id').that.is.a('number');
-    mirror.should.have.property('embed_id').that.is.a('string');
-    mirror.should.have.property('quality').that.is.a('number');
-    mirror.should.have.property('type').that.is.a('number');
-    mirror.should.have.property('host').that.is.an('object');
-    checkHost(mirror.host);
-}
-
-function checkHost(host) {
-    host.should.have.property('id').that.is.a('number');
-    host.should.have.property('name').that.is.a('string');
-    host.should.have.property('embed_prefix').that.is.a('string');
-    host.should.have.property('embed_suffix').that.satisfies(e => typeof e === 'string' || e === null);
-}
-
 describe('MasterAnimeAPI', () => {
     beforeEach(() => new Promise(resolve => setTimeout(resolve, 5000)));
     describe('#getAnime()', async () => {
@@ -345,29 +245,6 @@ describe('MasterAnimeAPI', () => {
             should.exist(filterListing);
             checkFilterListing(filterListing);
             return;
-        });
-    });
-    describe('#getEpisodeDetailed()', async () => {
-        const get = () => MasterAnimeAPI.getEpisodeDetailed('2756-saiki-kusuo-no-ps-nan-2', 1);
-        it('should return a promise', () => {
-            get().should.be.instanceof(Promise);
-        });
-        it(('should return a EpisodeDetailed object'), async () => {
-            const episodeDetailed = await get();
-            should.exist(episodeDetailed);
-            checkEpisodeDetailed(episodeDetailed);
-            return;
-        });
-    });
-    describe('#getEpisodeDetailedFromUrl()', async () => {
-        const get = async () => MasterAnimeAPI.getEpisodeDetailedFromUrl(await MasterAnimeAPI.getEpisodeUrl(1, 1));
-        it('should return a promise', () => {
-            get().should.be.instanceof(Promise);
-        });
-        it(('should return a EpisodeDetailed object'), async () => {
-            const episodeDetailed = await get();
-            should.exist(episodeDetailed);
-            checkEpisodeDetailed(episodeDetailed);
         });
     });
 });

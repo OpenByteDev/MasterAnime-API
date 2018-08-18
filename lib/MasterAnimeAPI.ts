@@ -2,8 +2,6 @@ import { Filter, Type } from './Filter';
 import { Id, Uri, UriHelper } from './UriHelper';
 
 import axios from 'axios';
-import jsonic = require('jsonic');
-import { AnimeDetailed2 } from '../types/MasterAnimeAPI';
 
 export interface AnimeBasic {
     title: string;
@@ -125,68 +123,6 @@ export interface PosterInfo {
     extension: string;
     file: string;
 }
-export interface EpisodeDetailed {
-    anime: AnimeDetailed2;
-    mirrors: Mirror[];
-    auto_update: number[];
-}
-export interface AnimeDetailed2 {
-    info: AnimeInfo2;
-    poster: string;
-    episodes: {
-        current: CurrentEpisode2;
-        next: Episode2 | null;
-        prev: Episode2 | null;
-    };
-}
-export interface Episode2 {
-    id: number;
-    episode: string;
-}
-export interface CurrentEpisode2 extends Episode2 {
-    subbed: number;
-    dubbed: number;
-    type: number;
-    title: string | null;
-    duration: number | null;
-    created_at: string;
-    tvdb_id: number | null;
-    description: string | null;
-    aired: string | null;
-    users: User[] | null;
-    extra_viewers: number;
-}
-export interface User {
-    id: number;
-    name: string;
-    last_time_seen: string;
-    is_online: boolean;
-    avatar: Avatar | null;
-}
-export interface Avatar {
-    id: string;
-    path: string;
-    extension: string;
-    file: string;
-}
-export interface AnimeInfo2 extends AnimeBasic {
-    id: number;
-    episode_length: number;
-}
-export interface Mirror {
-    id: number;
-    host_id: number;
-    embed_id: string;
-    quality: number;
-    type: number;
-    host: Host;
-}
-export interface Host {
-    id: number;
-    name: string;
-    embed_prefix: string;
-    embed_suffix: string | null;
-}
 
 export class MasterAnimeAPI {
 
@@ -211,18 +147,6 @@ export class MasterAnimeAPI {
     }
     public static async getFiltering(filter: Filter): Promise<FilterListing> {
         return (await axios.get(UriHelper.getFilter(filter))).data;
-    }
-    public static async getEpisodeDetailed(anime_slug: string, episode: number): Promise<EpisodeDetailed> {
-        return MasterAnimeAPI.getEpisodeDetailedFromUrl(UriHelper.getEpisode(anime_slug, episode));
-    }
-    public static async getEpisodeDetailedFromUrl(url: string): Promise<EpisodeDetailed> {
-        const { data: html } = await axios.get(url);
-        const argsRegex = /<script[^>]*>\s*(?:(?:var|let|const)\s*)?args\s*=\s*({.*?})\s*(;\s*)?<\/script>/i;
-        const argsData = argsRegex.exec(html);
-        if (argsData === null || argsData.length < 2)
-            return Promise.reject(new Error('Unable to find data'));
-        const argsString = argsData[1];
-        return jsonic(argsString) as EpisodeDetailed;
     }
 
 }
